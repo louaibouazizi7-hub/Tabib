@@ -67,3 +67,5 @@ Statuts : `demande` → `confirme` → `termine` (ou `annule`).
 ## Limites de cette version (à citer comme pistes d'amélioration)
 - Pas de mot de passe : l'espace médecin est une démo où l'on choisit le médecin.
 - La visite vidéo s'ouvre dans un nouvel onglet (Jitsi) au lieu d'être intégrée à la page.
+##Test
+
