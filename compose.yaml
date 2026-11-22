@@ -1,0 +1,34 @@
+name: tabib
+services:
+  mongo:
+    image: mongo:7
+    volumes:
+      - tabib-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    image: tabib-backend:1.0
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    image: tabib-frontend:1.0
+    ports:
+      - "127.0.0.1:5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+volumes:
+  tabib-data:
