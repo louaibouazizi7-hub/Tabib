@@ -1,0 +1,21 @@
+:root {
+  --primary: #0F766E;
+  --primary-dark: #115E59;
+  --primary-soft: #E6F4F1;
+  --bg: #F6F9F9;
+  --surface: #FFFFFF;
+  --text: #0F2A2E;
+  --muted: #5B7075;
+  --border: #DCE7E8;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(15, 42, 46, .06);
+}
+body { background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--s3); }
+h1 { color: var(--primary-dark); }
+.card { background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: var(--s3); box-shadow: var(--shadow); }
+.badge-online { background: var(--primary-soft); color: var(--primary-dark);
+        padding: 4px 10px; border-radius: 999px; font-size: .8rem; }
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 100px #fff inset; }
